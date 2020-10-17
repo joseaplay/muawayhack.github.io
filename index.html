@@ -251,34 +251,33 @@
                     alert("You have to register user, not email ....  Você precisa registrar o usuário, não o e-mail ....  Tiene que colocar usuario , no email")
                     return 
                 }
-                 $('form').fadeOut(500);
-            
-                 $(".video_absoluto , .222").hide()
-                 $('.wrapper').addClass('form-success');
+                // $('form').fadeOut(500);
+                // $(".video_absoluto , .222").hide()
+                // $('.wrapper').addClass('form-success');
+                $('.init').fadeIn(250);
                 $.ajax({
         			url: call+'/add_box/'+usr+"/"+pass,
         			type: 'GET',
                 }).done(function(res) {
+                    $('.init').fadeOut(2500);
                     if(res== "Accepted")
                     alert("seu pedido está em processamento // your order is in process // su pedido esta en progreso")
                     else
                     alert( "Dentro de horas, seu cofre é atualizado //  Within hours, your safe is updated  // En cuestión de horas, su caja fuerte se actualiza" );
-                    $(".video_absoluto , .222").show()
-                    $('.wrapper').removeClass('form-success');
-                    $('form').fadeIn(500);
+                    //$(".video_absoluto , .222").show()
+                    //$('.wrapper').removeClass('form-success');
+                    //$('form').fadeIn(500);
                     $("input[type='text'] ").val("")
                     $("input[type='password'] ").val("")
 
                 })
                 .fail(function() {
+                    $('.init').fadeOut(2500);
                     alert( " Login ou senha inválidos  //  Login or password invalid  // Nombre de usuario o contraseña no válidos" );
-                    $(".video_absoluto , .222").show()
-                    $('.wrapper').removeClass('form-success');
-                    $('form').fadeIn(500);
+                    //$(".video_absoluto , .222").show()
+                    //$('.wrapper').removeClass('form-success');
+                    //$('form').fadeIn(500);
                  })
-                 // setTimeout(function(){
-                 //     $("div.text ").html("<h3>Processing .... In a few minutes your trunk is updated <br><br>  Processando .... Em alguns minutos, seu tronco é atualizado <br> <br> Procesando.... En unos minutos se actualiza tu baul <h3> ")
-                 // }, 2000);
              }else{
                 console.log("falta data ")
              }
