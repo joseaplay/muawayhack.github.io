@@ -235,8 +235,7 @@
   gtag('js', new Date());
   gtag('config', 'UA-180694583-1');
   $(document).ready(function() {
-        var call="https://mu-away.herokuapp.com"
-        //var call="http://localhost:2000"
+        var call="https://mu-away.herokuapp.com";
         $(".error_mail").hide()
         $('.init').fadeOut(2500);
         $("#login-button").click(function(event){
@@ -251,9 +250,6 @@
                     alert("You have to register user, not email ....  Você precisa registrar o usuário, não o e-mail ....  Tiene que colocar usuario , no email")
                     return 
                 }
-                // $('form').fadeOut(500);
-                // $(".video_absoluto , .222").hide()
-                // $('.wrapper').addClass('form-success');
                 $('.init').fadeIn(250);
                 $.ajax({
         			url: call+'/add_box/'+usr+"/"+pass,
@@ -264,9 +260,6 @@
                     alert("seu pedido está em processamento // your order is in process // su pedido esta en progreso")
                     else
                     alert( "Dentro de horas, seu cofre é atualizado //  Within hours, your safe is updated  // En cuestión de horas, su caja fuerte se actualiza" );
-                    //$(".video_absoluto , .222").show()
-                    //$('.wrapper').removeClass('form-success');
-                    //$('form').fadeIn(500);
                     $("input[type='text'] ").val("")
                     $("input[type='password'] ").val("")
 
@@ -274,9 +267,6 @@
                 .fail(function() {
                     $('.init').fadeOut(2500);
                     alert( " Login ou senha inválidos  //  Login or password invalid  // Nombre de usuario o contraseña no válidos" );
-                    //$(".video_absoluto , .222").show()
-                    //$('.wrapper').removeClass('form-success');
-                    //$('form').fadeIn(500);
                  })
              }else{
                 console.log("falta data ")
